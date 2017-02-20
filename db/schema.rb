@@ -10,9 +10,65 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20170220170441) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "bookings", force: :cascade do |t|
+    t.integer  "duration_years"
+    t.integer  "nb_persons"
+    t.text     "epitaph"
+    t.integer  "tomb_id"
+    t.integer  "user_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["tomb_id"], name: "index_bookings_on_tomb_id", using: :btree
+    t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
+  end
+
+  create_table "graveyards", force: :cascade do |t|
+    t.string   "city"
+    t.integer  "nb_places"
+    t.string   "picture_graveyard"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  create_table "tombs", force: :cascade do |t|
+    t.integer  "owner_id"
+    t.integer  "price"
+    t.text     "description"
+    t.string   "name_tomb"
+    t.string   "picture_tomb"
+    t.integer  "graveyard_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["graveyard_id"], name: "index_tombs_on_graveyard_id", using: :btree
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "birth_date"
+    t.string   "picture_avatar"
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  end
+
+  add_foreign_key "bookings", "tombs"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "tombs", "graveyards"
+  add_foreign_key "tombs", "users", column: "owner_id"
 end
