@@ -1,10 +1,6 @@
 class BookingsController < ApplicationController
   before_action :find_booking_id, only: [:edit, :update, :destroy]
-  before_action :find_tomb_id, only: []
-
-  def index
-    @bookings = Booking.all
-  end
+  before_action :find_tomb_id, only: [:new, :create]
 
   def new
     @booking = Booking.new
