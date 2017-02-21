@@ -55,12 +55,12 @@ durations = [20, 40, 60, 80, 200]
 
 50.times do |booking|
 
-Booking.create!(
-nb_persons: place_number_tab.sample,
-duration_years: durations.sample,
-epitaph: Faker::TwinPeaks.quote,
-tomb: Tomb.all.sample,
-user: User.all.sample)
+  Booking.create!(
+  nb_persons: place_number_tab.sample,
+  duration_years: durations.sample,
+  epitaph: Faker::TwinPeaks.quote,
+  tomb: Tomb.all.sample,
+  user: User.all.sample)
 
 end
 
