@@ -2,22 +2,24 @@
 <p>Find me in app/views/profiles/index.html.erb</p>
 
 <ul>
+  <h2>Yours tombs</h2>
   <% @tombs.each do |tomb| %>
   <li>
-    <%= tomb.name_tomb %>
-    <%= tomb.description %>
-    <%= tomb.price %>
+    <p>Tomb name: <%= tomb.name_tomb %></p>
+    <p>Tomb description: <%= tomb.description %></p>
+    <p>Tomb price: <%= tomb.price %></p>
     <% end %>
   </li>
 </ul>
 
 <ul>
+  <h2>Yours bookings</h2>
   <% @bookings.each do |booking| %>
   <li>
-    <%= booking.tomb.name_tomb %>
-    <%= bookings.duration_years %>
-    <%= bookings.nb_persons %>
-    <%= bookings.epitaph %>
+    <p>Tomb name: <%= booking.tomb.name_tomb %></p>
+    <p>Duration in year: <%= booking.duration_years %></p>
+    <p>Number of persons: <%= booking.nb_persons %></p>
+    <p>Epitaph: <%= booking.epitaph %></p>
     <% end %>
   </li>
 </ul>
