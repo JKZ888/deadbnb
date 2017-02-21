@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 # devise require root such as
 root :to => 'graveyards#index'
-
+devise_for :users
   resources :graveyards, only: [:index] do
     resources :tombs, only: [:index]
   end
