@@ -8,4 +8,6 @@ class User < ApplicationRecord
   # mytombs is the path for owners and the list for owners.
   has_many :tombs, through: :bookings
   # tombs is the path for occupants
+  validates :name, presence: true
+  validates :birth_date, presence: true
 end
