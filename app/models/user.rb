@@ -10,4 +10,5 @@ class User < ApplicationRecord
   # tombs is the path for occupants
   validates :name, presence: true
   validates :birth_date, presence: true
+
 end
