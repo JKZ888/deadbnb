@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Attachinary::Engine => "/attachinary"
 
 # devise require root such as
   root :to => 'graveyards#index'
