@@ -4,4 +4,5 @@ class Tomb < ApplicationRecord
   has_many :bookings
   validates :price, presence: true
   validates :name_tomb, uniqueness: true, presence: true
+  has_attachment :picture_tomb
 end
