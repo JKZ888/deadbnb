@@ -1,0 +1,28 @@
+<h1>Graveyards#index</h1>
+
+<p>Find me in app/views/graveyards/index.html.erb</p>
+
+
+<h1 class="text-center">Welcome to Graveyards Paradise !</h1>
+
+
+<div class="row cocktails">
+  <% @graveyards.each do |graveyard| %>
+    <div class="col-xs-12 col-md-4">
+
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://lorempixel.com/300/200?<%= rand(100) %>');">
+
+          <div class="card-description">
+            <h2><%= graveyard.city %></h2>
+            <h2><%= graveyard.nb_places %></h2>
+          </div>
+      </div>
+    </div>
+  <% end  %>
+
+</div>
+
+
+
+
+
