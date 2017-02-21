@@ -1,0 +1,6 @@
+<%= simple_form_for([@tombs, @booking]) do |f| %>
+  <%= f.input :duration_years %>
+  <%= f.input :bn_persons, collection: (1..30) %>
+  <%= f.input :epitaph %>
+  <%= f.submit %>
+<% end %>
