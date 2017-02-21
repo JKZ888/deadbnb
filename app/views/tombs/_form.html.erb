@@ -1,0 +1,11 @@
+
+<%= simple_form_for(@tomb) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :name_tomb %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.input :photo_cache, as: :hidden %>
+  <%= f.button :submit %>
+
+<% end %>
