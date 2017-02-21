@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   resources :graveyards, only: [:index] do
     resources :tombs, only: [:index]
   end
