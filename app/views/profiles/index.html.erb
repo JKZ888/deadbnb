@@ -9,6 +9,9 @@
     <p>Tomb description: <%= tomb.description %></p>
     <p>Tomb price: <%= tomb.price %></p>
 
+    <% if tomb.picture_tomb? %>
+      <%= cl_image_tag tomb.picture_tomb.path, width: 400, height: 300, crop: :fill %>
+    <% end %>
 
 
     <%= link_to "edit", edit_tomb_path(tomb) %>
