@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
     @booking.user_id = current_user.id
     @booking.tomb = @tomb
     if @booking.save
-      redirect_to graveyard_path
+      redirect_to profiles_path
     else
       render :new
     end
@@ -23,7 +23,7 @@ class BookingsController < ApplicationController
 
   def update
     if @booking.update(booking_params)
-      redirect_to graveyard_path
+      redirect_to profiles_path
     else
       render :edit
     end
@@ -31,7 +31,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
-    redirect_to graveyard_path
+    redirect_to profiles_path
   end
 
   private
@@ -40,7 +40,7 @@ class BookingsController < ApplicationController
   end
 
   def find_tomb_id
-    @tomb = Tomb.find(params[:id])
+    @tomb = Tomb.find(params[:tomb_id])
   end
 
 

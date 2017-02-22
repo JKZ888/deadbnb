@@ -1,0 +1,8 @@
+<h1>All the <%= @graveyard.city %></h1>
+
+<% @tombs.each do |tomb| %>
+  <h2><%= tomb.name_tomb %></h2>
+  <%= link_to 'DeadBook!', new_tomb_booking_path(tomb)  %>
+<% end %>
+
+

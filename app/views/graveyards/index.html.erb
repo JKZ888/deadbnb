@@ -4,6 +4,7 @@
 
 
 <h1 class="text-center">Welcome to Graveyards Paradise !</h1>
+<%= link_to 'your profile is here', profiles_path %>
 
 
 <div class="row cocktails">
@@ -16,6 +17,7 @@
             <h2><%= graveyard.city %></h2>
             <h2><%= graveyard.nb_places %></h2>
           </div>
+          <%= link_to "tombs", graveyard_tombs_path(graveyard)%>
       </div>
     </div>
   <% end  %>

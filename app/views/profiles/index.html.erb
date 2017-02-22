@@ -1,16 +1,24 @@
 <h1>Profiles#index</h1>
 <p>Find me in app/views/profiles/index.html.erb</p>
-
 <ul>
   <h2>Yours tombs</h2>
+
   <% @tombs.each do |tomb| %>
   <li>
     <p>Tomb name: <%= tomb.name_tomb %></p>
     <p>Tomb description: <%= tomb.description %></p>
     <p>Tomb price: <%= tomb.price %></p>
+
+
+
+    <%= link_to "edit", edit_tomb_path(tomb) %>
+
+
+    <%= link_to "Delete", tomb_path(tomb), method: :delete, data: { confirm: 'Are you sure?'} %>
     <% end %>
   </li>
 </ul>
+    <%= link_to "Add a grave x.x", new_tomb_path  %>
 
 <ul>
   <h2>Yours bookings</h2>
@@ -20,6 +28,8 @@
     <p>Duration in year: <%= booking.duration_years %></p>
     <p>Number of persons: <%= booking.nb_persons %></p>
     <p>Epitaph: <%= booking.epitaph %></p>
+    <%= link_to "edit", edit_booking_path(booking)  %>
+    <%= link_to "delete", booking_path(booking), method: :delete, data: { confirm: 'Are you sure'} %>
     <% end %>
   </li>
 </ul>
