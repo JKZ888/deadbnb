@@ -41,10 +41,16 @@ end
 # generate fake users
 
 User.create(
-  name:test
+  name:"test",
+<<<<<<< HEAD
+  birth_date: Faker::Date.between(34557.days.ago, Date.today),
+  email: "test@test.com",
+  password: "password",
+=======
   birth_date:Faker::Date.between(34557.days.ago, Date.today),
-  email: test@test.com,
+  email: "test@test.com",
   password: "password"
+>>>>>>> master
   )
 
 10.times do |user|
@@ -62,6 +68,9 @@ price_info = (100..550).to_a
 
 iteration_nb = 0
 
+
+tomb_picture_urls = %w[https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUveoCikiCo3wqEgBrwOwyjzsQ7KnNqk1W_bWGHtP-za4XQhAB]
+
 50.times do |tomb|
 
 group_nb = iteration_nb+=1
@@ -71,7 +80,9 @@ group_nb = iteration_nb+=1
   description: Faker::ChuckNorris.fact,
   price: price_info.sample,
   graveyard: Graveyard.all.sample,
-  owner: User.all.sample)
+  # picture_tomb: tomb_picture_urls.sample,
+  owner: User.all.sample
+  )
 end
 
 # generate bookings
@@ -88,3 +99,23 @@ durations = [20, 40, 60, 80, 200]
   user: User.all.sample)
 
 end
+
+
+# http://www.shximai.com/data/out/89/67937425-grave-wallpapers.jpg
+# http://www.wallpaperup.com/uploads/wallpapers/2012/12/01/23138/big_thumb_bc4e2e14eb1e744f8a58d9776532a257.jpg
+# http://www.wallpaperup.com/uploads/wallpapers/2013/03/30/68061/d403e9d3cf9a2d8c8fe0a02c432f400d.jpg
+# http://www.wallpaperup.com/uploads/wallpapers/2014/01/13/226402/big_thumb_d7238a5e1180c578b1ed92233d474b06.jpg
+# http://www.wallpaperup.com/uploads/wallpapers/2013/04/08/72353/big_thumb_fa35dc5581d56bc5bc368e1f3e55aad5.jpg
+# http://img04.deviantart.net/b730/i/2008/037/5/b/grave_by_raven30hell.jpg
+# http://img15.deviantart.net/7ae9/i/2015/127/3/4/celtic_grave_by_worldii-dx27jg.jpg
+# http://img04.deviantart.net/d836/i/2004/148/2/a/grave.jpg
+# http://img06.deviantart.net/89df/i/2008/268/5/7/sambo__s_grave_by_andrewfphoto.jpg
+# http://img10.deviantart.net/9299/i/2007/318/9/8/grave_by_brinnswf.jpg
+# http://pre08.deviantart.net/fd95/th/pre/i/2011/051/b/c/graves_104_quaddles_by_quaddles-d29zgcp.jpg
+# http://orig06.deviantart.net/5c7e/f/2008/045/4/5/gravestones_by_fbuk.jpg
+# http://img08.deviantart.net/0b34/i/2008/116/8/e/grave_and_angel___2_by_khol363.jpg
+# http://orig13.deviantart.net/5dcc/f/2014/237/e/3/moor9d_by_wyldraven-d7wlx9q.jpg
+# http://img09.deviantart.net/789c/i/2005/015/e/6/the_moon_is_so_beutiful_tonght_by_suzi9mm.jpg
+# http://img09.deviantart.net/535d/i/2014/202/f/9/i_ching_28___da_guo__great_preponderance__by_annewipf-d7rnrbs.jpg
+# http://cdn.quotesgram.com/img/20/62/1348286193-adamthinksgraves.jpg
+# http://wiki-buzz.fr/wp-content/uploads/2013/01/toldo.jpg
