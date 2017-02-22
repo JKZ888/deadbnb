@@ -6,11 +6,11 @@
 <h1 class="text-center">Welcome to Graveyards Paradise !</h1>
 
 
-<div class="row cocktails">
+<div class="row graveyards">
   <% @graveyards.each do |graveyard| %>
     <div class="col-xs-12 col-md-4">
 
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://lorempixel.com/300/200?<%= rand(100) %>');">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= graveyard.picture_graveyard%>');">
 
           <div class="card-description">
             <h2><%= graveyard.city %></h2>
@@ -21,7 +21,6 @@
   <% end  %>
 
 </div>
-
 
 
 
