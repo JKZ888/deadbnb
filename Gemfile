@@ -22,6 +22,8 @@ gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
 
 group :development, :test do
+  gem 'awesome_print'
+
   gem 'binding_of_caller'
   gem 'better_errors'
 

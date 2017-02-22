@@ -42,9 +42,15 @@ end
 
 User.create(
   name:"test",
+<<<<<<< HEAD
   birth_date: Faker::Date.between(34557.days.ago, Date.today),
   email: "test@test.com",
   password: "password",
+=======
+  birth_date:Faker::Date.between(34557.days.ago, Date.today),
+  email: "test@test.com",
+  password: "password"
+>>>>>>> master
   )
 
 10.times do |user|
