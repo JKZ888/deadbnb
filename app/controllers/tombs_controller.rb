@@ -1,13 +1,30 @@
 class TombsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
+
+  def index
+    @graveyard = Graveyard.find(params[:graveyard_id])
+    @tombs = @graveyard.tombs
+  end
 
   def new
     @tomb = Tomb.new
   end
 
   def create
-    @tomb = Tomb.new(tomb_params)
+
+    ## 1
+    # @tomb = Tomb.new(tomb_params)
+    # @tomb.owner = current_user
+
+    ## 2
+    @tomb = current_user.my_tombs.new(tomb_params)
+
+
+    # ap current_user.my_tombs.new
+
+
     if @tomb.save
-      redirect_to graveyards_path
+      redirect_to profiles_path
     else
       render :new
     end
@@ -18,16 +35,22 @@ class TombsController < ApplicationController
   end
 
   def update
+    @tomb = Tomb.find(params[:id])
     if @tomb.update(tomb_params)
-      redirect_to graveyards_path
+      redirect_to profiles_path
     else
       render :edit
     end
   end
 
-  def delete
-    @tomb.destroy
-    redirect_to graveyards_path
+  def destroy
+    @tomb = Tomb.find(params[:id])
+    if @tomb.bookings.any?
+      flash[:notice] = "impossible to destroy this tomb because it has been booked"
+    else
+      @tomb.destroy
+    end
+     redirect_to profiles_path
   end
 
   private

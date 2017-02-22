@@ -41,9 +41,9 @@ end
 # generate fake users
 
 User.create(
-  name:test
+  name:"test",
   birth_date:Faker::Date.between(34557.days.ago, Date.today),
-  email: test@test.com,
+  email: "test@test.com",
   password: "password"
   )
 
