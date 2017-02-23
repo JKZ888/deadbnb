@@ -1,11 +1,12 @@
 .card {
-  height: 175px;
-
+  height: 280px;
   position: relative;
   background-color: #fcfcfc;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   margin: 20px;
+  padding: 20px;
 }
+
 
 .card-tomb{
   height: 284px;
@@ -29,12 +30,16 @@
   left: 21px;
   font-size: 20px;
   line-height: 20px;
-
 }
 
-.card-description-graveyard {
+
+.card-img-top {
+height:140px;
+width: 200px;
+}
+
+.card-description-tomb {
   position: absolute;
 }
-
 
 

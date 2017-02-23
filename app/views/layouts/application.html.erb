@@ -25,9 +25,11 @@
       <%= alert %>
       </div>
     <% end %>
-      <div class="wrapper flexbox">
-        <div class="container flex-item">
+      <div class="wrapper">
+      <div class="inner-wrapper">
+        <div class="container-fluid">
           <%= yield %>
+        </div>
         </div>
       </div>
         <%= javascript_include_tag 'application' %>

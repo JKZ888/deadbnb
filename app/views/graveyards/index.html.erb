@@ -4,33 +4,21 @@
 <h1 class="text-center"> You just can't wait to die !</h1>
 <%= link_to 'your profile is here', profiles_path %>
 
-<div class="row graveyards">
+<div class="row">
   <% @graveyards.each do |graveyard| %>
+
     <div class="col-xs-12 col-md-4">
 
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= graveyard.picture_graveyard%>');">
-        <div class="card-description">
+      <div class="card">
+        <img class="card-img-top" src="<%= graveyard.picture_graveyard%>" alt="Card image cap">
+        <div class="card-block">
+          <h4 class="card-title"><%=graveyard.city%></h4>
+          <p class="card-text"><%= "#{graveyard.nb_places} places available" %></p>
+          <a href="#" class="btn-beetle">Deadbook!</a>
         </div>
-      </div>
-
-      <div>
-        <p><%= graveyard.city %></p>
-        <p><%= "#{graveyard.nb_places} places available" %></p>
-        <%= link_to "tombs", graveyard_tombs_path(graveyard)%>
       </div>
 
     </div>
   <% end  %>
 
-</div>
-
-
-
-  <div class="card-category">Popular</div>
-  <div class="card-description">
-    <h2>Some stuff</h2>
-    <p>Very cool stuff, useful and smart</p>
-  </div>
-  <img class="card-user avatar" src="user.jpg">
-  <a class="card-link" href="#" ></a>
 </div>
