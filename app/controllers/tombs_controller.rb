@@ -7,6 +7,7 @@ class TombsController < ApplicationController
   end
 
   def new
+    @graveyards = Graveyard.all
     @tomb = Tomb.new
   end
 
@@ -56,7 +57,7 @@ class TombsController < ApplicationController
   private
 
   def tomb_params
-    params.require(:tomb).permit(:price, :description, :name_tomb, :picture_tomb)
+    params.require(:tomb).permit(:price, :description, :name_tomb, :picture_tomb, :graveyard_id)
   end
 
 end

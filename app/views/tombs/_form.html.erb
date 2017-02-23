@@ -1,7 +1,7 @@
 
 <%= simple_form_for(@tomb) do |f| %>
   <%= f.error_notification %>
-
+  <%= f.input :graveyard_id, collection: @graveyards, label_method: :city %>
   <%= f.input :name_tomb %>
   <%= f.input :description %>
   <%= f.input :price %>
