@@ -25,10 +25,13 @@
       <%= alert %>
       </div>
     <% end %>
-
-    <%= yield %>
-    <%= javascript_include_tag 'application' %>
-    <%= cloudinary_js_config %>
+      <div class="wrapper">
+        <div class="container">
+          <%= yield %>
+        </div>
+      </div>
+        <%= javascript_include_tag 'application' %>
+        <%= cloudinary_js_config %>
 
 
     <%= render 'shared/footer' %>
