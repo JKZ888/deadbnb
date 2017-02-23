@@ -8,29 +8,15 @@
   <% @graveyards.each do |graveyard| %>
     <div class="col-xs-12 col-md-4">
 
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= graveyard.picture_graveyard%>');">
-        <div class="card-description">
+      <div class="card card-image-graveyard" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= graveyard.picture_graveyard%>');"> </div>
+        <div class="card-description-graveyard">
+          <p><%= graveyard.city %></p>
+          <p><%= "#{graveyard.nb_places} places available" %></p>
         </div>
-      </div>
-
-      <div>
-        <p><%= graveyard.city %></p>
-        <p><%= "#{graveyard.nb_places} places available" %></p>
-        <%= link_to "tombs", graveyard_tombs_path(graveyard)%>
+        <a class="btn-beetle" href= <%= link_to "Deadbook", graveyard_tombs_path(graveyard)%>> </a>
       </div>
 
     </div>
   <% end  %>
 
-</div>
-
-
-
-  <div class="card-category">Popular</div>
-  <div class="card-description">
-    <h2>Some stuff</h2>
-    <p>Very cool stuff, useful and smart</p>
-  </div>
-  <img class="card-user avatar" src="user.jpg">
-  <a class="card-link" href="#" ></a>
 </div>

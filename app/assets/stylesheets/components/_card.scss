@@ -1,6 +1,6 @@
 .card {
   height: 175px;
-
+  width: 280px;
   position: relative;
   background-color: #fcfcfc;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
@@ -9,12 +9,18 @@
 
 .card-description-tomb {
   position: absolute;
-
 }
 
 .card-description-graveyard {
   position: absolute;
+  bottom: 10px;
+  left: 10px;
 }
 
-
+.card-image-graveyard {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-size: cover !important;
+}
 
