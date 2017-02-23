@@ -14,15 +14,25 @@ h1, h2, h3 {
 }
 
 
-// container wrapper
-.container {
-  background: rgba(252, 252, 252, 0.97);
-  margin: 0 auto;
-  width: 970px;
+.flexbox {
+display: flex;
+align-items: center;
 }
 
+.flex-item {
+flex: 0 0 80%;
+}
+
+// container wrapper
 .wrapper {
 background: #3d3d3d;
 }
+
+.container {
+  background: rgba(252, 252, 252, 0.97);
+  margin: 0 auto;
+}
+
+
 
 // fonts
