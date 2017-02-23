@@ -7,8 +7,28 @@
   margin: 20px;
 }
 
+.card-tomb{
+  height: 284px;
+  position: relative;
+  background-color: #fcfcfc;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  margin: 20px;
+
+}
+
 .card-description-tomb {
   position: absolute;
+  bottom: 21px;
+  left: 21px;
+  line-height: 17px;
+}
+
+.card-description-tomb-picture {
+  position: absolute;
+  top: 21px;
+  left: 21px;
+  font-size: 20px;
+  line-height: 20px;
 
 }
 

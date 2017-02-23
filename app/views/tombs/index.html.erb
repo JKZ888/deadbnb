@@ -1,15 +1,23 @@
 <h2>See the available tomb in <%= @graveyard.city %></h2>
 
 <% @tombs.each do |tomb| %>
-<div class="card">
-  <div class="card-description">
-  <h2><%= tomb.name_tomb %></h2>
-  <% if tomb.picture_tomb %>
-  <%= cl_image_tag tomb.picture_tomb.path width: 200, height: 200 %>
-  <% end %>
-  <%= link_to 'DeadBook!', new_tomb_booking_path(tomb)  %>
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="card-tomb">
+          <div class="card-description-tomb-picture">
+            <% if tomb.picture_tomb? %>
+            <%= cl_image_tag tomb.picture_tomb.path, width: 50, height: 50, crop: :fill %>
+            <% else %>
+            <%= "No available images ha ha ha ha !!!" %>
+            <% end %>
+          </div>
+        <div class="card-description-tomb">
+          <p><%= tomb.name_tomb %></p>
+          <%= link_to 'DeadBook!', new_tomb_booking_path(tomb)  %>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 <% end %>
 
 
