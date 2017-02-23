@@ -1,7 +1,22 @@
+/* Optional class to fix the navbar on top */
+.navbar-wagon-fixed {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+  width: 100%;
+
+}
+
 /* Main class */
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: white;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fcfcfc+0,fcfcfc+72,afafaf+86,7f7f7f+94,474747+100,383838+100,2b2b2b+100,2c2c2c+100,666666+100,131313+100 */
+  background: #fcfcfc; /* Old browsers */
+  background: -moz-linear-gradient(top,  #fcfcfc 0%, #fcfcfc 72%, #afafaf 86%, #7f7f7f 94%, #474747 100%, #383838 100%, #2b2b2b 100%, #2c2c2c 100%, #666666 100%, #131313 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #fcfcfc 0%,#fcfcfc 72%,#afafaf 86%,#7f7f7f 94%,#474747 100%,#383838 100%,#2b2b2b 100%,#2c2c2c 100%,#666666 100%,#131313 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #fcfcfc 0%,#fcfcfc 72%,#afafaf 86%,#7f7f7f 94%,#474747 100%,#383838 100%,#2b2b2b 100%,#2c2c2c 100%,#666666 100%,#131313 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
   transition: all 0.3s ease;
   display: flex;
   height: 70px;
@@ -10,13 +25,23 @@
   justify-content: space-between;
 }
 
-/* Optional class to fix the navbar on top */
-.navbar-wagon-fixed {
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  z-index: 1;
-  width: 100%;
+/* button */
+.btn-beetle.btn-navbar {
+  line-height: 15px;
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+.btn-beetle.btn-navbar:hover {
+  line-height: 15px;
+  font-size: 12px;
+  margin-right: 5px;
+  background:#4A5158 ;
+}
+
+/* Avatar */
+.navbar-avatar > .avatar {
+ width: 40px;
 }
 
 /* Navbar logo */
@@ -26,6 +51,7 @@
 
 /* Navbar right section (with form, links, button) */
 .navbar-wagon-right {
+  padding-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -40,7 +66,7 @@
 
 /* Navbar standard link */
 .navbar-wagon-link {
-  color: #616668;
+  color: #fcfcfc;
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
@@ -55,12 +81,12 @@
   border-radius: 20em;
   line-height: 40px;
   background-color: #D23333;
-  color: white;
+  color: #fcfcfc;
   font-size: 14px;
   border: 2px solid #D23333;
 }
 .navbar-wagon-button:hover {
-  color: white;
+  color: #fcfcfc;
   background: #D23333;
   border-color: #ac2626;
 }
@@ -74,8 +100,8 @@
   position: relative;
 }
 .navbar-wagon-search-btn {
-  line-height: 40px;
-  color: #E6E6E6;
+  line-height: 30px;
+  color: #4A5158;
   border: none;
   background: transparent;
   position: absolute;
@@ -86,24 +112,24 @@
 .navbar-wagon-search-input {
   flex: 0 1 300px;
   transition: all 0.15s ease;
-  line-height: 40px;
+  line-height: 30px;
   font-weight: lighter;
   color: #666666;
-  border: 1px solid #E6E6E6;
+  border: 1px solid #4A5158;
   border-radius: 5px;
   padding: 0 10px;
   font-size: 14px;
   outline: none;
 }
 .navbar-wagon-search-input:focus  {
-  border: 1px solid #CCCCCC;
+  border: 1px solid #4A5158;
 }
 
 /* Navbar dropdown menu */
 .navbar-wagon-dropdown-menu {
   margin-top: 15px;
-  box-shadow: 1px 1px 4px #E6E6E6;
-  border-color: #E6E6E6;
+  box-shadow: 1px 1px 4px #3d3d3d;
+  border-color: #3d3d3d;
 }
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
@@ -124,8 +150,8 @@
   position: absolute;
   right: 10px;
   top: -6px;
-  background-color: white;
+  background-color: #fcfcfc;
   transform: rotate(45deg);
-  border-left: 1px solid #E6E6E6;
-  border-top: 1px solid #E6E6E6;
+  border-left: 1px solid #3d3d3d;
+  border-top: 1px solid #3d3d3d;
 }
