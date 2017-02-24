@@ -13,7 +13,7 @@ User.destroy_all
 
 # generate the 30 graveyards
 
-cities = %w[Lille Paris Lyon Grenoble Nantes Bordeaux Strasbourg Nancy Toulouse Montpellier Marseille]
+cities = %w[Lille Paris Lyon Grenoble Nantes Bordeaux Strasbourg Nancy Toulouse Montpellier Marseille LasVegas NewYork SanFrancisco]
 
 graveyard_picture_urls = %w[
   http://pariseastvillage.com/wp-content/uploads/2016/02/cimetiere-pere-lachaise-paris-east-village-2.jpg
@@ -31,7 +31,7 @@ graveyard_picture_urls = %w[
 
 place_number_tab = (1..30).to_a
 
-5.times do |graveyard|
+20.times do |graveyard|
   Graveyard.create!(
     city: cities.sample,
     nb_places: place_number_tab.sample,
@@ -47,7 +47,7 @@ User.create(
   password: "password"
   )
 
-10.times do |user|
+15.times do |user|
 
 User.create!(
   name: Faker::Superhero.name,
