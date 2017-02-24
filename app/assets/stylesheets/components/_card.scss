@@ -1,6 +1,5 @@
 .card {
   height: 280px;
-  position: relative;
   background-color: #fcfcfc;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   margin: 15px;
@@ -18,29 +17,42 @@
 
 .card-tomb{
   height: 284px;
-  position: relative;
   background-color: #fcfcfc;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   margin: 20px;
-  box-shadow: 1px 1px 10px
+  padding: 15px;
+  box-shadow: 1px 1px 10px;
+}
+
+.card-description-tomb {
+  padding-left: 40px;
+  font-size: 20px;
+  width: 70%;
 
 }
 
 .card-description-tomb {
   position: absolute;
-  bottom: 21px;
-  left: 21px;
-  line-height: 17px;
+  top: 44px;
+  bottom: 0px;
+  right: 0px;
+  left: 92px;
+  line-height: 23px;
+  max-height: 250px;
+  padding: 0px;
 }
+
 
 .card-description-tomb-picture {
   position: absolute;
-  top: 21px;
-  left: 21px;
+  padding-right: 10px;
+  padding: 5px;
+  width: 30%;
+  top: 86px;
+  left: 116px;
   font-size: 20px;
   line-height: 20px;
-  border: 2px;
-  border-color: black;
+  text-align: center;
 }
 
 .card-img-top {
@@ -55,3 +67,59 @@
 padding: 2px;
 height: auto;
 }
+
+.toto a {
+  position: absolute;
+  bottom: 56px;
+  top: 194px;
+  left: 155px;
+
+}
+
+/* entire container, keeps perspective */
+.flip-container {
+  perspective: 1000px;
+}
+  /* flip the pane when hovered */
+  .flip-container:hover .flipper, .flip-container.hover .flipper {
+    transform: rotateY(180deg);
+  }
+
+.flip-container, .front, .back {
+  width: 381px;
+  height: 329px;
+
+}
+
+/* flip speed goes here */
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  width: 345px;
+
+
+  position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+  backface-visibility: hidden;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+  transform: rotateY(180deg);
+}
+
+

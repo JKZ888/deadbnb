@@ -1,25 +1,38 @@
 <h2>See the available tomb in <%= @graveyard.city %></h2>
 
-<div class="row">
+  <div class="row">
   <% @tombs.each do |tomb| %>
-    <div class="col-xs-12 col-sm-6 col-md-4">
+  <div class="col-xs-12 col-sm-6 col-md-4">
+  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+
+    <div class="flipper">
       <div class="card-tomb">
-          <div class="card-description-tomb-picture">
-            <% if tomb.picture_tomb? %>
-            <%= cl_image_tag tomb.picture_tomb.path, width: 50, height: 50, crop: :fill %>
-            <% else %>
-            <%= "No available images ha ha ha ha !!!" %>
-            <% end %>
-          </div>
-        <div class="card-description-tomb">
-          <p><%= tomb.name_tomb %></p>
-          <p><%= tomb.price %></p>
-          <p><%= tomb.description %></p>
-          <%= link_to 'DeadBook!', new_tomb_booking_path(tomb), class: "btn-beetle"%>
+      <div class="front">
+        <div class="card-description-tomb-picture">
+          <% if tomb.picture_tomb? %>
+          <%= cl_image_tag tomb.picture_tomb.path, width: 100, height: 100, crop: :fit %>
+          <% else %>
+          <%= "No available images ha ha ha ha !!!" %>
+          <% end %>
         </div>
       </div>
+      </div>
+      <div class="back">
+      <div class="card-description-tomb">
+        <p><%= tomb.name_tomb %></p>
+        <p><%= tomb.price %></p>
+        <p><%= tomb.description %></p>
+      </div>
+      <div class="toto"> <%= link_to 'DeadBook!', new_tomb_booking_path(tomb), class: "btn-beetle"%>
+      </div>
+
+      </div>
     </div>
+    </div>
+    </div>
+
   <% end %>
 </div>
+
 
 
