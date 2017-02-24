@@ -19,7 +19,7 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
   transition: all 0.3s ease;
   display: flex;
-  height: 70px;
+  height: $navbar-height;
   padding: 0px 30px;
   align-items: center;
   justify-content: space-between;
