@@ -32,7 +32,7 @@ class TombsController < ApplicationController
   end
 
   def edit
-    @graveyard = Graveyard.all
+    @graveyards = Graveyard.all
     @tomb = Tomb.find(params[:id])
   end
 
