@@ -1,45 +1,55 @@
 <h1>Manage your tombs, manage your eternal bookings</h1>
- <%= link_to "Logout", destroy_user_session_path, method: :delete%>
-<p>Find me in app/views/profiles/index.html.erb</p>
-<ul>
+
   <h2>Yours tombs</h2>
 
-  <% @tombs.each do |tomb| %>
-  <li>
-    <p>Tomb name: <%= tomb.name_tomb %></p>
-    <p>Tomb description: <%= tomb.description %></p>
-    <p>Tomb price: <%= tomb.price %></p>
-
-    <% if tomb.picture_tomb? %>
-      <%= cl_image_tag tomb.picture_tomb.path, width: 400, height: 300, crop: :fill %>
-    <% end %>
-
-
-    <%= link_to "edit", edit_tomb_path(tomb) %>
-
-
-    <%= link_to "Delete", tomb_path(tomb), method: :delete, data: { confirm: 'Are you sure?'} %>
-    <% end %>
-  </li>
-</ul>
-    <div style="text-align:center;"><%= link_to "Add a new Tomb ", new_tomb_path, class: "btn-beetle" %></div>
-
 <div class="row">
-  <% @bookings.each do |booking| %>
+  <% @tombs.each do |tomb| %>
     <div class="col-xs-12 col-md-4">
-      <div class="card flexbox">
+      <div class="card-profiles flexbox">
        <div class="card-block flex-item">
-          <h4 class="card-title"><%= "#{booking.tomb.name_tomb}... " %></h4>
-          <h4 class="card-title"><%= "is waiting for you in #{booking.tomb.graveyard.city}..." %></h4>
-          <p class="card-text"><%= "Tomb booked for #{booking.duration_years} years !" %></p>
-          <div><p class="card-text"><%= booking.epitaph %></p></div>
-          <div style="text-align: center;"><%= link_to " CANCEL", booking_path(booking), class: "btn-beetle", method: :delete, data: { confirm: 'Are you really sure ?'} %>
-          <%= link_to "Modify", edit_booking_path(booking), class: "btn-beetle" %></div>
-          <div style="text-align: center, font-size: 24px;"><%= "You rest in peace for #{Money.new(booking.tomb.price * booking.nb_persons * booking.duration_years, "EUR")} € only"  %> </div>
+          <h4 class="card-title"><%= "#{tomb.name_tomb}... " %></h4>
+            <% if tomb.picture_tomb? %>
+              <%= cl_image_tag tomb.picture_tomb.path, class: "card-img-top flex-item", width: 400, height: 300, crop: :fill %>
+            <% end %>
+          <h4 class="card-title"><%= "#{tomb.description}..." %></h4>
+          <div style="text-align: center;"><%= link_to " Destroy", tomb_path(tomb), class: "btn-beetle", method: :delete, data: { confirm: 'Are you really sure ?'} %>
+          <%= link_to "Modify", edit_tomb_path(tomb), class: "btn-beetle" %></div>
+          <br>
+          <div style="text-align: center, font-size: 24px;"><%= "You rest in peace for #{tomb.price} € only" %> </div>
+          <br>
        </div>
       </div>
     </div>
   <% end %>
 </div>
 
+  <h2>Yours Deadbooks !</h2>
+
+<div class="row">
+  <% @bookings.each do |booking| %>
+    <div class="col-xs-12 col-md-4">
+      <div class="card-profiles flexbox">
+       <div class="card-block flex-item">
+          <h4 class="card-title"><%= "#{booking.tomb.name_tomb}... " %></h4>
+          <h4 class="card-title"><%= "is waiting for you in #{booking.tomb.graveyard.city}..." %></h4>
+          <ul>
+          <li><p class="card-text"><%= "Tomb booked for #{booking.duration_years} years !" %></p></li>
+          <li><p class="card-text"><%= "You can welcome up to #{booking.nb_persons} buddies!" %></p></li>
+          <li><div><p class="card-text">
+            <% if booking.epitaph? %>
+            <%= booking.epitaph %>
+            <% else %>
+            <%= "Waiting for your epitaph" %>
+            <% end %>
+          </p></div></li>
+          </ul>
+          <div style="text-align: center;"><%= link_to " CANCEL", booking_path(booking), class: "btn-beetle", method: :delete, data: { confirm: 'Are you really sure ?'} %>
+          <%= link_to "Modify", edit_booking_path(booking), class: "btn-beetle" %></div>
+          <br>
+          <div style="text-align: center, font-size: 24px;"><%= "You rest in peace for #{booking.tomb.price * booking.nb_persons * booking.duration_years} € only"  %></div>
+       </div>
+      </div>
+    </div>
+  <% end %>
+</div>
 
