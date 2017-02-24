@@ -1,24 +1,58 @@
 
 
-<h2 class="text-center"> Deadbnb </h2>
-<h1 class="text-center"> You just can't wait to die !</h1>
-<%= link_to 'your profile is here', profiles_path %>
+
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://wallpapercave.com/wp/wWI7nzB.jpg');">
+  <div class="banner-content">
+    <h2>DeadBnB</h2>
+    <h1> It is always time to care about your future</h1>
+    <a class="btn-beetle">Yes I do !</a>
+  </div>
+</div>
 
 <div class="row">
   <% @graveyards.each do |graveyard| %>
 
     <div class="col-xs-12 col-md-4">
-
-      <div class="card">
-        <img class="card-img-top" src="<%= graveyard.picture_graveyard%>" alt="Card image cap">
-        <div class="card-block">
-          <h4 class="card-title"><%=graveyard.city%></h4>
-          <p class="card-text"><%= "#{graveyard.nb_places} places available" %></p>
-          <a href="#" class="btn-beetle">Deadbook!</a>
+      <div class="card flexbox">
+        <img class="card-img-top flex-item" src="<%= graveyard.picture_graveyard%>" alt="Card image cap">
+        <div class="card-block flex-item">
+          <h4 class="card-title"><%= "In #{graveyard.city}..." %></h4>
+          <p class="card-text"><%= "#{graveyard.nb_places} places available !" %></p>
+          <div class="text-center"><a href="#" class="btn-beetle">I Deadbook</a></div>
         </div>
       </div>
-
     </div>
   <% end  %>
+</div>
 
+<div class="row">
+  <% @graveyards.each do |graveyard| %>
+
+    <div class="col-xs-12 col-md-4">
+      <div class="card flexbox">
+        <div><img class="card-img-top flex-item" src="<%= graveyard.picture_graveyard%>" alt="Card image cap"></div>
+        <div class="card-block flex-item">
+          <h4 class="card-title"><%= "In #{graveyard.city}..." %></h4>
+          <p class="card-text"><%= "#{graveyard.nb_places} places available !" %></p>
+          <div class="text-center"><a href="#" class="btn-beetle">I Deadbook</a></div>
+        </div>
+      </div>
+    </div>
+  <% end  %>
+</div>
+
+<div class="row">
+  <% @graveyards.each do |graveyard| %>
+
+    <div class="col-xs-12 col-md-4">
+      <div class="card flexbox">
+        <img class="card-img-top flex-item" src="<%= graveyard.picture_graveyard%>" alt="Card image cap">
+        <div class="card-block flex-item">
+          <h4 class="card-title"><%= "In #{graveyard.city}..." %></h4>
+          <p class="card-text"><%= "#{graveyard.nb_places} places available !" %></p>
+          <div class="text-center"><a href="#" class="btn-beetle">I Deadbook</a></div>
+        </div>
+      </div>
+    </div>
+  <% end  %>
 </div>
