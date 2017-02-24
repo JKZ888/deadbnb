@@ -3,10 +3,9 @@
   position: relative;
   background-color: #fcfcfc;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  margin: 20px;
-  padding: 20px;
+  margin: 15px;
+  padding: 15px;
 }
-
 
 .card-tomb{
   height: 284px;
@@ -35,14 +34,15 @@
   border-color: black;
 }
 
-
 .card-img-top {
-height:140px;
-width: 200px;
+  display: flex;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 205px;
+  max-height: 122px;
 }
 
-.card-description-tomb {
-  position: absolute;
+.card-block {
+padding: 2px;
+height: auto;
 }
-
-
