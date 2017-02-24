@@ -30,7 +30,7 @@
 
     <div class="col-xs-12 col-md-4">
       <div class="card flexbox">
-        <div><img class="card-img-top flex-item" src="<%= graveyard.picture_graveyard%>" alt="Card image cap"></div>
+        <%= image_tag graveyard.picture_graveyard, class: "card-img-top flex-item" %>
         <div class="card-block flex-item">
           <h4 class="card-title"><%= "In #{graveyard.city}..." %></h4>
           <p class="card-text"><%= "#{graveyard.nb_places} places available !" %></p>
@@ -46,7 +46,7 @@
 
     <div class="col-xs-12 col-md-4">
       <div class="card flexbox">
-        <img class="card-img-top flex-item" src="<%= graveyard.picture_graveyard%>" alt="Card image cap">
+        <%= image_tag graveyard.picture_graveyard, class: "card-img-top flex-item" %>
         <div class="card-block flex-item">
           <h4 class="card-title"><%= "In #{graveyard.city}..." %></h4>
           <p class="card-text"><%= "#{graveyard.nb_places} places available !" %></p>
