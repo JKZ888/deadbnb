@@ -5,10 +5,10 @@
 body {
   font-family: 'Fredericka the Great', cursive;
   font-weight: 400;
-  line-height: 5px;
+
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-family: 'Mystery Quest', cursive;
   letter-spacing: 1px;
 }
@@ -16,20 +16,22 @@ h1, h2, h3 {
 
 // container wrapper
 .wrapper {
-background: #3d3d3d;
+  background: #3d3d3d;
 }
 
 .inner-container {
   width: 70%;
   margin: 0 auto;
+  min-height: 100vh;
+  padding-top: $navbar-height + 30px;
+  padding-bottom: 55px + 30px;
 }
 
 .container-fluid {
   background: rgba(252, 252, 252, 0.85);
   padding-top: 25px;
   padding-bottom: 25px;
-  padding-left: 25px;
-  padding-right: 25px;
+
 }
 
 .flexbox {

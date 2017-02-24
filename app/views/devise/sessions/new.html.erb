@@ -1,11 +1,5 @@
 
-<div class="wrapper sign_in">
-  <div class="inner-wrapper sign_in">
-    <div class="container-fluid sign_in">
-
-
-
-    <h2>Log in</h2>
+    <h1>Log in</h1>
 
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs sign_in">
@@ -15,13 +9,9 @@
       </div>
 
       <div class="form-actions sign_in">
-        <%= f.button :submit, "Log in" , class: "btn-beetle sign_in" %>
+        <%= f.button :submit, "Log in" , class: "btn-beetle" %>
       </div>
     <% end %>
 
-
-    </div>
-  </div>
-</div>
-
+    <%= render "devise/shared/links" %>
 
